@@ -1,5 +1,2 @@
-# gar821.github.io
-# gar821.github.io
-# gar821.github.io
-# gar821.github.io
-This is my website repo
+Welcome to my website! My name is Joshua! aaaaaa
+
