@@ -1,0 +1,63 @@
+Last login: Wed Sep  4 08:01:19 on ttys000
+1023172@1023172-student-FVFMR48A1WFV ~ % date
+Wed Sep  4 08:12:37 EDT 2024
+1023172@1023172-student-FVFMR48A1WFV ~ % ls
+Desktop		Documents	Downloads	Library		Movies		Music		Pictures	Public
+1023172@1023172-student-FVFMR48A1WFV ~ % cd Desktop 
+1023172@1023172-student-FVFMR48A1WFV Desktop % ls
+Screenshot 2024-09-03 at 10.07.52 PM.png	Screenshot 2024-09-03 at 10.18.41 PM.png	Screenshot 2024-09-03 at 11.22.29 AM.png	slides pdf station 8.pdf
+Screenshot 2024-09-03 at 10.12.00 PM.png	Screenshot 2024-09-03 at 10.48.18 AM.png	Screenshot 2024-09-03 at 11.28.34 AM.png
+Screenshot 2024-09-03 at 10.14.07 PM.png	Screenshot 2024-09-03 at 11.03.38 AM.png	Screenshot 2024-09-03 at 6.28.42 PM.png
+Screenshot 2024-09-03 at 10.17.29 PM.png	Screenshot 2024-09-03 at 11.14.09 AM.png	cdls_quiz
+1023172@1023172-student-FVFMR48A1WFV Desktop % cd cdls_quiz
+1023172@1023172-student-FVFMR48A1WFV cdls_quiz % ls
+a	b	c	d	e	f	g	h
+1023172@1023172-student-FVFMR48A1WFV cdls_quiz % cd a
+1023172@1023172-student-FVFMR48A1WFV a % ls
+1.txt	2.txt	3.txt	4.txt
+1023172@1023172-student-FVFMR48A1WFV a % cd ..
+1023172@1023172-student-FVFMR48A1WFV cdls_quiz % cd b
+1023172@1023172-student-FVFMR48A1WFV b % ls
+1.txt	2.txt	3.txt	4.txt
+1023172@1023172-student-FVFMR48A1WFV b % cd ..
+1023172@1023172-student-FVFMR48A1WFV cdls_quiz % cd c
+1023172@1023172-student-FVFMR48A1WFV c % ls
+1.txt
+1023172@1023172-student-FVFMR48A1WFV c % cd ..
+1023172@1023172-student-FVFMR48A1WFV cdls_quiz % cd e
+1023172@1023172-student-FVFMR48A1WFV e % ls
+1.txt	2.txt
+1023172@1023172-student-FVFMR48A1WFV e % cd ..
+1023172@1023172-student-FVFMR48A1WFV cdls_quiz % cd f
+1023172@1023172-student-FVFMR48A1WFV f % ls
+1.txt	2.txt
+1023172@1023172-student-FVFMR48A1WFV f % cd ..
+1023172@1023172-student-FVFMR48A1WFV cdls_quiz % cd g
+1023172@1023172-student-FVFMR48A1WFV g % ls
+1.txt	2.txt	3.txt	4.txt	5.txt
+1023172@1023172-student-FVFMR48A1WFV g % cd ..
+1023172@1023172-student-FVFMR48A1WFV cdls_quiz % cd h
+1023172@1023172-student-FVFMR48A1WFV h % ls
+1.txt	2.txt	3.txt
+1023172@1023172-student-FVFMR48A1WFV h % 
+1023172@1023172-student-FVFMR48A1WFV h % g has the most; 5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
