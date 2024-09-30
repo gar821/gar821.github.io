@@ -1,0 +1,63 @@
+Last login: Fri Sep  6 08:07:43 on ttys000
+1023172@1023172-student-FVFMR48A1WFV ~ % date
+Fri Sep  6 08:07:48 EDT 2024
+1023172@1023172-student-FVFMR48A1WFV ~ % cd Desktop 
+1023172@1023172-student-FVFMR48A1WFV Desktop % mkdir quiz
+1023172@1023172-student-FVFMR48A1WFV Desktop % ls
+Screenshot 2024-09-03 at 10.07.52 PM.png
+Screenshot 2024-09-03 at 10.12.00 PM.png
+Screenshot 2024-09-03 at 10.14.07 PM.png
+Screenshot 2024-09-03 at 10.17.29 PM.png
+Screenshot 2024-09-03 at 10.18.41 PM.png
+Screenshot 2024-09-03 at 10.48.18 AM.png
+Screenshot 2024-09-03 at 11.03.38 AM.png
+Screenshot 2024-09-03 at 11.14.09 AM.png
+Screenshot 2024-09-03 at 11.22.29 AM.png
+Screenshot 2024-09-03 at 11.28.34 AM.png
+Screenshot 2024-09-03 at 6.28.42 PM.png
+Screenshot 2024-09-04 at 8.15.50 AM.png
+Screenshot 2024-09-05 at 10.37.10 AM.png
+Screenshot 2024-09-05 at 10.38.20 AM.png
+Screenshot 2024-09-05 at 10.41.24 AM.png
+Screenshot 2024-09-05 at 10.41.37 AM.png
+Screenshot 2024-09-05 at 10.51.26 AM.png
+Screenshot 2024-09-05 at 11.09.47 AM.png
+Screenshot 2024-09-05 at 4.39.23 PM.png
+cdls_quiz
+quiz
+slides pdf station 8.pdf
+terminal_practice
+1023172@1023172-student-FVFMR48A1WFV Desktop % cd quiz
+1023172@1023172-student-FVFMR48A1WFV quiz % echo "move_me.txt" > move_me.txt
+1023172@1023172-student-FVFMR48A1WFV quiz % echo "copy_me.txt" > copy_me.txt
+1023172@1023172-student-FVFMR48A1WFV quiz % mkdir destination
+1023172@1023172-student-FVFMR48A1WFV quiz % ls
+copy_me.txt	destination	move_me.txt
+1023172@1023172-student-FVFMR48A1WFV quiz % mv move_me.txt destination
+1023172@1023172-student-FVFMR48A1WFV quiz % ls
+copy_me.txt	destination
+1023172@1023172-student-FVFMR48A1WFV quiz % cp copy_me.txt destination
+1023172@1023172-student-FVFMR48A1WFV quiz % rm copy_me.txt
+1023172@1023172-student-FVFMR48A1WFV quiz % ls
+destination
+1023172@1023172-student-FVFMR48A1WFV quiz % cd destination
+1023172@1023172-student-FVFMR48A1WFV destination % ls
+copy_me.txt	move_me.txt
+1023172@1023172-student-FVFMR48A1WFV destination % date
+Fri Sep  6 08:11:23 EDT 2024
+1023172@1023172-student-FVFMR48A1WFV destination % 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
