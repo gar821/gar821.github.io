@@ -18,7 +18,10 @@ a
 
 ## Now let's work on links
 
-[I like youtube](youtube.com)
+[I like youtube](http://www.youtube.com)
+
+## Now let's work on pictures
+![Here's a picture of a chair](chair.jpg)
 
 ## Now let's do tables
 
