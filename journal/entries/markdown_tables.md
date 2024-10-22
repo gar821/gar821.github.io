@@ -1,6 +1,6 @@
 # Today we'll practice Markdown Tables, Link, Pictures
 
-a
+
 
 1. item 1
 2. item 2
@@ -28,7 +28,16 @@ a
 These are my favorite cats
 
 | Name | Facts             |
-| --- | ---                |
+| ---  | ---               |
 | Garfield | Likes Lasagna |
-| Tom | Chases Jerry       |
-| Meowth | Pokemon         |
+| Tom      | Chases Jerry  |
+| Meowth   | Pokemon       |
+
+
+##Now we'll do equations
+
+$y = mx + b$
+
+$f(x) = x^2$
+
+$f(x) = \frac{3}{4}$
