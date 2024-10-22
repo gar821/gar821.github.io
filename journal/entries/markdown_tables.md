@@ -34,7 +34,7 @@ These are my favorite cats
 | Meowth   | Pokemon       |
 
 
-##Now we'll do equations
+## Now we'll do equations
 
 $y = mx + b$
 
