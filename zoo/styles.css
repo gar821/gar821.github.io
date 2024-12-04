@@ -1,0 +1,20 @@
+body{
+	background-color:LemonChiffon;
+}
+header{
+	background-color:PowderBlue;
+}
+td,th,table{
+	border:2px solid;
+	 border-collapse:collapse;
+	background-color:white;
+}
+th{
+	background-color:Lavender;
+}
+nav{
+	background-color:Honeydew;
+}
+main{
+	background-color:AntiqueWhite;
+}
