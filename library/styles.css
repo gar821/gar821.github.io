@@ -1,20 +1,21 @@
 body{
-	background-color:e;
+	background-color: #f9e1fb;
 }
 header{
-	background-color:a;
+	background-color: rgb(0, 128, 128);
+	color:white;
 }
 td,th,table{
 	border:2px solid;
 	border-collapse:collapse;
-	background-color:o;
+	background-color:white;
 }
 th{
-	background-color:l;
+	background-color:Lavender;
 }
 nav{
-	background-color:i;
+	background-color:AntiqueWhite;
 }
 main{
-	b
+	background-color:White;
 }
