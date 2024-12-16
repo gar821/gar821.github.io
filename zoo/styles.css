@@ -4,6 +4,18 @@ body{
 header{
 	background-color:PowderBlue;
 }
+h1{
+	text-align:left;
+	text-transform:uppercase;
+	font-family:'Georgia',sans-serif;
+}
+h2{
+	font-family:'Helvetica',sans-serif;
+}
+p{
+	font-family:'Tahoma','Georgia',sans-serif;
+	text-align:left;
+}
 td,th,table{
 	border:2px solid;
 	 border-collapse:collapse;
