@@ -5,10 +5,25 @@ body{
 	background-color: Lavender;
 	color: #333333;
 }
+#e{
+	padding-left:15px;
+	text-align:left;
+	background-color:whitesmoke;
+}
+#a{
+	padding-left:15px
+	text-align:left;
+	display:inline;
+	background-color:whitesmoke;
+}
+*{
+	text-align:center;
+}
 h1{
 	font-family: Arial, sans-serif;
 	color: MidnightBlue;
 	margin-bottom: 10px;
+	text-align:center;
 }
 header, nav, main, section {
 	width: 100%;
@@ -30,7 +45,8 @@ blockquote {
 	margin: 20px;
 	padding: 10px;
 	border-left: 5px solid #0056b3;
-	background-color: f9f9f9;
+	background-color: WhiteSmoke;
+	text-align:left;
 }
 img{
 	margin-top: 10px;
@@ -39,12 +55,11 @@ img{
 .grid-container{
 	display: grid;
 	grid-template-columns:repeat (2, 1fr);
-	gap:20px;
-	padding:20px;
+	padding-bottom:20px;
 .grid-item{
 	display: grid;
 	place-items:center;
-	background-color:
+	background-color:gainsboro;
 	padding: 20px;
 	border: 1px solid Silver;
 	text-align:center;
@@ -55,7 +70,7 @@ section {
 	padding: 20px;
 	border: 1px solid Silver;
 }
-.navbar {
+.navbar{
 	background-color:MidnightBlue;
 	padding: 10px;
 }
