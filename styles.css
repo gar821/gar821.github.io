@@ -29,7 +29,9 @@ header, nav, main, section {
 	width: 100%;
 }
 nav ul {
-	padding: 0;
+	padding: 10px;
+	border: 3px ridge;
+	background-color:honeydew;
 }
 nav ul li {
 	display: inline;
@@ -71,6 +73,8 @@ section {
 	border: 1px solid Silver;
 }
 .navbar{
+	display:block;
 	background-color:MidnightBlue;
 	padding: 10px;
+	border: 1px solid;
 }
