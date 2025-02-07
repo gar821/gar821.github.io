@@ -8,16 +8,16 @@
 	<h1>You're Invited to an Ice Cream Party!</h1>
 	<p>Please fill out this form to help us plan.</p>
 	<form action="https://httpbin.org/post" method="POST">
-	<label for="email">What is your email address?</label><br>
-        <input type="email" id="email" name="email">
+	<label for="email">What is your email address?  *</label><br>
+        <input type="email" id="email" name="email" required>
         <br>
 	<br>
-	<label for="pnum">What is your phone number?</label><br>
-	<input type="tel" id="pnum" name="pnum">
+	<label for="pnum">What is your phone number?  *</label><br>
+	<input type="tel" id="pnum" name="pnum" required>
 	<br>
 	<br>
-	<label for="peoplenum">How many people will you bring with you to the party?</label><br>
-        <input type="number" id="peoplenum" name="peoplenum">
+	<label for="peoplenum">How many people will you bring with you to the party?  *</label><br>
+        <input type="number" id="peoplenum" name="peoplenum" required>
 	<br>
 	<p>What is your favorite flavor of ice cream?<p>
 	<label for="vanilla">Vanilla</label>
@@ -66,8 +66,8 @@
 	<textarea id="sug" name="sug" rows="4" cols="50"></textarea>
 	<br>
 	<br>
-	<input type="reset" name="reset">
-	<input type="submit" name="submit">
+	<button type="reset">Reset</button>
+	<button type="submit">Submit</button>
 	</form>
 </body>
 </html>
