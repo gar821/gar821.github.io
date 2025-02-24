@@ -50,9 +50,12 @@ blockquote {
 	background-color: WhiteSmoke;
 	text-align:left;
 }
-img{
+#sf{
 	margin-top: 10px;
 	border: 5px solid MidnightBlue;
+}
+#t{
+	margin-left:750px;
 }
 .grid-container{
 	display: grid;
