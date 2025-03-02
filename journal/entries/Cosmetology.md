@@ -9,8 +9,8 @@ Repo Link: [https://github.com/gar821/reservation]
 
 
 The 2 pages i worked on
-![]()
-![]()
+![index.html; homepage](https://github.com/gar821/gar821.github.io/blob/main/images/homepage.png)
+![reservation page](https://github.com/gar821/gar821.github.io/blob/main/images/reservation.png)
 
 
 ## Form Description (Reservation Page
