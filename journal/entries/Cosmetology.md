@@ -1,8 +1,8 @@
 # Project Reflection - Cosmetology Website
 
 
-Website Link: [https://gar821.github.io/reservation/]
-Repo Link: [https://github.com/gar821/reservation]
+[Website Link](https://gar821.github.io/reservation/)
+[Repo Link](https://github.com/gar821/reservation)
 
 
 ## Screenshots
