@@ -38,9 +38,33 @@ nav ul li {
 	margin-right: 15px;
 }
 nav ul li a {
-	color: MidnightBlue;
+    color: MidnightBlue;
 }
 
+#sf {
+    margin-top: 10px;
+    border: 5px solid MidnightBlue;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#sf:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+display: grid;
+        grid-template-columns:repeat (2, 1fr);
+        padding-bottom:20px;
+.grid-item{
+        display: grid;
+        place-items:center;
+        background-color:gainsboro;
+        padding: 20px;
+        border: 1px solid Silver;
+        text-align:center;
+        font-size: 1.2rem;
+        color:Gray;
+}
 blockquote {
 	font-size 1.5rem;
 	color:666666;
