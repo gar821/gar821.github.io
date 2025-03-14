@@ -1,81 +1,76 @@
-body{
+body {
     background-color: #305dcf;
 }
 
-footer{
+footer {
     position: absolute;
     bottom: 0%;
 }
 
-/* Build the emoji face with gradients and shadow */
-.emoji{
+.emoji {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     height: 300px;
     width: 300px;
-    background-image: radial-gradient(
-        #feca3e 58%,
-        #ff8000 80%
-    );
+    background-image: radial-gradient(#ff4444 58%, #cc0000 80%);
     border-radius: 50%;
     overflow: hidden;
     box-shadow: 30px 30px 35px rgba(0,0,0,0.25);
 }
 
-/* Build the eyes */
-/*
-.eyes {
-
-}
-*/
-
 .eye {
-    
-    /* INSERT YOUR EYE SHAPE RULES HERE */
-
-    position: absolute;
+	width:40px;
+	height:20px;
+	background-color: #2c2c2c;
+	position: absolute;
+	top:100px;
+	transform-origin: bottom center;
+        animation: shak 0.6s infinite alternate linear;
 }
 
 .left {
-    top: 90px;
     left: 25%;
+    transform: rotate(10deg);
+        border-radius: 0 0 10px 15px;
 }
 
 .right {
-    top: 90px;
     right: 25%;
+    transform: rotate(-10deg);
+	border-radius: 0 0 10px 15px;
 }
 
-.mouth{
-    height: 100px;
-    width: 220px;
+
+.mouth {
+    height: 80px;
+    width: 150px;
     background-color: #663d0f;
     position: absolute;
     margin: auto;
     left: 0;
     right: 0;
-    bottom: 25px;
-    overflow: hidden;
-    border-radius: 5px 5px 180px 180px
+    bottom: 40px;
+    border-radius: 50px 50px 5px 5px;
+	animation: shake 0.6s infinite alternate linear; 
 }
 
-.teeth{
-    height: 40px;
-    width: 220px;
+.teeth {
+    height: 30px;
+    width: 150px;
     background-color: #e9fbfa;
     position: absolute;
-    bottom: 75px;
-    border-radius: 5px 5px 80px 80px;
+    bottom: 50px;
+    border-radius: 50px 50px 5px 5px;
 }
 
-.tongue{
-    height: 70px;
-    width: 105px;
-    position: absolute;
-    background-color: red;
-    border-radius: 50%;
-    transform: translate(50%);
-    top: 70px;
+@keyframes shake {
+    0%{ transform: translate(0,0); }
+    25% { transform: translate(-10px,-5px); }
+	50%{ transform: translate(10px, -10px);}
+    75% { transform: translate(-10px, 10px); }
+	100% {transform: translate(10px, 5px)}
 }
+
+
