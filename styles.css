@@ -29,17 +29,25 @@ header, nav, main, section {
 	width: 100%;
 }
 nav ul {
-	padding: 10px;
+	padding:0px;
 	border: 3px ridge;
-	background-color:honeydew;
+	background-color:#AC3E31;
+	display:flex;
+	justify-content:center;
 }
 nav ul li {
 	display: inline;
 	margin-right: 15px;
 }
 nav ul li a {
-    color: MidnightBlue;
+    color: white;
+	padding:14px 20px;
+	display:block;
+	transition: background-color 0.3s ease;
 }
+nav ul li a:hover{
+	background-color:#575757;
+	}
 
 #sf {
     margin-top: 10px;
@@ -52,11 +60,15 @@ nav ul li a {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
-display: grid;
-        grid-template-columns:repeat (2, 1fr);
-        padding-bottom:20px;
+.grid-container{
+	display:grid;
+	grid-template-columns: repeat(4,1fr);
+	gap:20px;
+	padding:20px;
+}
+
 .grid-item{
-        display: grid;
+        display: block;
         place-items:center;
         background-color:gainsboro;
         padding: 20px;
@@ -64,10 +76,15 @@ display: grid;
         text-align:center;
         font-size: 1.2rem;
         color:Gray;
+	display:block;
+	transition: background-color 0.3s ease;
+}
+.grid-item:hover{
+	background-color:#f1f1f1;
 }
 blockquote {
 	font-size 1.5rem;
-	color:666666;
+	color: #666666;
 	margin: 20px;
 	padding: 10px;
 	border-left: 5px solid #0056b3;
@@ -82,11 +99,15 @@ blockquote {
 	margin-left:750px;
 }
 .grid-container{
+	width:100%;
 	display: grid;
-	grid-template-columns:repeat (2, 1fr);
+	grid-template-columns: repeat(4 , 1fr);
+	grid-auto-rows:100px;
+	gap:20px;
 	padding-bottom:20px;
+}
 .grid-item{
-	display: grid;
+	display:grid;
 	place-items:center;
 	background-color:gainsboro;
 	padding: 20px;
@@ -94,14 +115,34 @@ blockquote {
 	text-align:center;
 	font-size: 1.2rem;
 	color:Gray;
-}
-section {
-	padding: 20px;
-	border: 1px solid Silver;
+	border-radius:8px;
 }
 .navbar{
 	display:block;
 	background-color:MidnightBlue;
 	padding: 10px;
 	border: 1px solid;
+}
+@media (max-width: 800px) {
+	.grid-container {
+                grid-template-columns: repeat(3,1fr);
+        	grid-template-areas:
+		"item1 item2"
+		"item1 item2"
+	}
+	.grid-item:nth-child(1) { grid-area: item1; }
+        .grid-item:nth-child(2) { grid-area: item2; }
+
+}
+@media (max-width:480px) {
+	.grid-container{
+		grid-template-columns: 2fr; /* it wont let me go with 1 */
+	}
+	nav ul {
+		flex-direction: column;
+		align-items:center;
+	}
+	nav ul li {
+		margin:10px 0;
+	}
 }
