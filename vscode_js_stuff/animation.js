@@ -15,6 +15,14 @@ const player = {
     speed:3
 }
 
+//this is also an object.
+//we access values from this kind of object like this:
+//keys['arrowup']
+//every time a key is pressed or released, we'll update this object
+//if a key is currently being pressed, that key will be set to true
+//when released, false
+const keys = {};
+
 function drawPlayer(){
     //to access a variable from the player object
     //we uset his syntax:
@@ -28,6 +36,22 @@ function drawPlayer(){
     ctx.fill();
 }
 
+function movePlayer(){
+    if(keys['ArrowDown']){
+        player.y += player.speed;
+    }
+    if(keys['ArrowUp']){
+        player.y -= player.speed;
+    }
+    if(keys['ArrowLeft']){
+        player.x -= player.speed;
+    }
+    if(keys['ArrowRight']){
+        player.x += player.speed;
+    }
+}
+
+
 //define functions
 function drawRect(x,y) {
     //console.log("drawing rect");
@@ -40,6 +64,7 @@ function drawRect(x,y) {
 function animate() {
     drawRect(x,y);
     drawPlayer();
+    movePlayer();
 
     // TODO: Add some code here 
     //  that will change the rectangle's position
@@ -70,10 +95,17 @@ if(y<0){
 */
 
 function handleKeyPress(e){
-    console.log(e.key);
+    keys[e.key] = true;
 }
 
 document.addEventListener('keydown', handleKeyPress);
+
+//this is a shorthand way to 
+//define & use a function at the same time. 
+//We call this an "arrow function"
+document.addEventListener('keyup', (e) =>{
+    keys[e.key] = false;
+});
 
 
 //call our function
