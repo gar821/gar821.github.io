@@ -5,6 +5,8 @@ let x = 0;
 let y = 0;
 let dx = 5;
 let dy = 1;
+let score = 0;
+let gameRunning = true;
 
 //we'll represent the player as an object
 const player = {
@@ -36,21 +38,6 @@ function drawPlayer(){
     ctx.fill();
 }
 
-function movePlayer(){
-    if(keys['ArrowDown']){
-        player.y += player.speed;
-    }
-    if(keys['ArrowUp']){
-        player.y -= player.speed;
-    }
-    if(keys['ArrowLeft']){
-        player.x -= player.speed;
-    }
-    if(keys['ArrowRight']){
-        player.x += player.speed;
-    }
-}
-
 
 //define functions
 function drawRect(x,y) {
@@ -61,27 +48,60 @@ function drawRect(x,y) {
     ctx.fill();
 }
 
+function movePlayer(){
+    if(keys['ArrowDown'] && player.y < 500){
+        player.y += player.speed;
+    }
+    if(keys['ArrowUp'] && player.y > 0){
+        player.y -= player.speed;
+    }
+    if(keys['ArrowLeft']){
+        player.x -= player.speed;
+    }
+    if(keys['ArrowRight']){
+        player.x += player.speed;
+    }
+    if (player.x > 450){
+        player.x = 0;
+    }
+    if (player.x < 0){
+        player.x = 450;
+    }
+}
+
+function drawScore(){
+    ctx.font = "10px Arial";
+    ctx.fillText(score, 10,10);
+}
+
 function animate() {
-    drawRect(x,y);
-    drawPlayer();
-    movePlayer();
+    if(gameRunning){
+        drawRect(x,y);
+        drawPlayer();
+        movePlayer();
+        score ++; //means + 1 so its like score = score+1 or score +=score
+        if (score >= 200){
+            gameRunning = false;
+        }
+        drawScore();
 
-    // TODO: Add some code here 
-    //  that will change the rectangle's position
-x=x+dx;
-y=y+dy
+        // TODO: Add some code here 
+        //  that will change the rectangle's position
+    x=x+dx;
+    y=y+dy
 
-if(x > 350){
-    dx=dx*-1;
-}
-if(x<0){
-    dx=dx*-1
-}
-if(y>450){
-    dy=dy*-1
-}
-if(y<0){
-    dy=dy*-1
+    if(x > 350){
+        dx=dx*-1;
+    }
+    if(x<0){
+        dx=dx*-1
+    }
+    if(y>450){
+        dy=dy*-1
+    }
+    if(y<0){
+        dy=dy*-1
+    }
 }
     requestAnimationFrame(animate);
 }
