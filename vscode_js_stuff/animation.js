@@ -74,16 +74,36 @@ function drawScore(){
     ctx.fillText(score, 10,10);
 }
 
+function checkCollision(){
+    //this is the AABB method
+
+    // first, im going to make some helper variables
+    let player_min_x= player.x - 20;
+    let player_max_x= player.x + 20;
+    let player_min_y= player.y - 20;
+    let player_max_y= player.y + 20;
+
+    let box_min_x= x;
+    let box_max_x= x + 50;
+    let box_min_y= y;
+    let box_max_y= y + 50;
+
+    if(box_max_y > player_min_y
+        && box_min_y < player_max_y
+        && box_max_x > player_min_x
+        && box_min_x < player_max_x){
+            gameRunning = false;
+    }
+}
+
 function animate() {
     if(gameRunning){
         drawRect(x,y);
         drawPlayer();
         movePlayer();
         score ++; //means + 1 so its like score = score+1 or score +=score
-        if (score >= 200){
-            gameRunning = false;
-        }
         drawScore();
+        checkCollision();
 
         // TODO: Add some code here 
         //  that will change the rectangle's position
