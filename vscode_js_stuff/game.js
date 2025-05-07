@@ -45,6 +45,16 @@ function updateNotes(){
     });
 }
 
+function collision(){
+    notes.forEach(note=>{
+        if (note.y <= targetY  && note.y >= targetY ){
+            console.log("collide");
+    }
+    });
+}
+
+
+
 function animate(){ // every 1/60 sec
     ctx.clearRect(0,0,400,600);
 
@@ -53,6 +63,7 @@ function animate(){ // every 1/60 sec
     drawNotes();
 
     updateNotes();
+    collision();
     requestAnimationFrame(animate);
 }
 animate();
