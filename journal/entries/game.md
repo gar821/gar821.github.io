@@ -27,4 +27,4 @@ Players will use 4 keys, like  D,F,J,K, to match falling notes. The game will gi
 - sync notes to music, if possible
 
 ## Concept Art
-link [here] (https://github.com/gar821/gar821.github.io/blob/main/vscode_js_stuff/gameconcept.html)
+link [here](https://github.com/gar821/gar821.github.io/blob/main/vscode_js_stuff/gameconcept.html)
