@@ -15,3 +15,13 @@ const targets = [
     { x: 250, color: 'rgba(50, 205, 50, 1)' }, // bright green
     { x: 350, color: 'rgba(255, 215, 0, 1)' }  // bright yellow
 ];
+function drawTargets(){
+    targets.forEach(target => {
+      ctx.beginPath();
+      ctx.arc(target.x,targetY,targetRadius,0,Math.PI*2); // circle
+      ctx.fillStyle = target.color; //color
+      ctx.fill();
+    });
+}
+drawTargets();
+
