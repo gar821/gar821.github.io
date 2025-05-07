@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhythm Game Concept Art</title>
+    <style>
+        canvas {
+            display: block;
+            margin: 20px auto;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+<canvas id="gameCanvas" width="400" height="600"></canvas>
+<script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Background
+    ctx.fillStyle = '#222';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Target circles, stationary at the top
+    const targetRadius = 30;
+    const targetY = 50;
+    const targets = [
+        { x: 50, color: 'rgba(255, 99, 71, 1)' }, // Bright red
+        { x: 150, color: 'rgba(30, 144, 255, 1)' }, // Bright blue
+        { x: 250, color: 'rgba(50, 205, 50, 1)' }, // Bright green
+        { x: 350, color: 'rgba(255, 215, 0, 1)' } // Bright yellow
+    ];
+    targets.forEach(target => {
+        ctx.beginPath();
+        ctx.arc(target.x, targetY, targetRadius, 0, Math.PI * 2);
+        ctx.fillStyle = target.color;
+        ctx.fill();
+        ctx.closePath();
+    });
+
+    // Notes (same size as target circles, moving upward)
+    const noteRadius = targetRadius; // Match radius with target circles
+    const notes = [
+        { x: 50, y: 500, color: 'rgba(255, 99, 71, 0.8)' }, // Bright red
+        { x: 150, y: 450, color: 'rgba(30, 144, 255, 0.8)' }, // Bright blue
+        { x: 250, y: 400, color: 'rgba(50, 205, 50, 0.8)' }, // Bright green
+        { x: 350, y: 350, color: 'rgba(255, 215, 0, 0.8)' } // Bright yellow
+    ];
+    notes.forEach(note => {
+        ctx.beginPath();
+        ctx.arc(note.x, note.y, noteRadius, 0, Math.PI * 2);
+        ctx.fillStyle = note.color;
+        ctx.fill();
+        ctx.closePath();
+    });
+
+    // Instructions
+    ctx.fillStyle = 'white';
+    ctx.font = '18px Arial';
+    ctx.fillText('Press A, S, D, F when notes reach the targets', 15, 580);
+</script>
+</body>
+</html>
