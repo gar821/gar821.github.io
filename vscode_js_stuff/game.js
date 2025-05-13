@@ -1,6 +1,45 @@
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
 
+let currentState = "startScreen"; // tracks the current state of the game
+
+function drawStartScreen(){ //start screen with
+    drawBackground();
+    ctx.font = "40px Arial";
+    ctx.fillStyle = "#FFF";
+    ctx.textAlign = "center";
+    ctx.fillText("Rhythm Game", 400 / 2, 200); // title,
+
+    ctx.font = "20px Arial";
+    ctx.fillText("Click to Start", 400 / 2, 300); //and instructions
+}
+
+canvas.addEventListener("mousedown", () =>{
+    if (currentState === "startScreen") {
+        currentState = "gameplay"; // transition to gameplay
+    }
+});
+
+//draw game based on the current state
+function animate() {
+    ctx.clearRect(0, 0, 400, 600);
+
+    if (currentState === "startScreen"){ //if start screen,
+        //draw start screen
+        drawStartScreen();
+    } else if (currentState === "gameplay") {//otherwise, if state is
+        //gameplay, do gameplay stuff
+        drawBackground();
+        drawTargets();
+        drawNotes();
+        drawScore();
+        drawMisses();
+        updateNotes();
+    }
+
+    requestAnimationFrame(animate);
+}
+
 function drawBackground() {
     ctx.fillStyle = "#222";
     ctx.fillRect(0, 0, 400, 600);
@@ -61,13 +100,13 @@ function updateNotes() {
 function drawScore() {
     ctx.font = "20px Arial";
     ctx.fillStyle = "#FFF";
-    ctx.fillText("Score: " + score, 10, 30);
+    ctx.fillText("Score: " + score, 50, 30);
 }
 
 function drawMisses(){
     ctx.font = "20px Arial";
     ctx.fillStyle = "FFF";
-    ctx.fillText("Misses: " + misses, 300, 30); // Display misses at the top right
+    ctx.fillText("Misses: " + misses, 350, 30); // Display misses at the top right
 }
 
 let keyToX = {
@@ -101,17 +140,6 @@ document.addEventListener("keydown", (event) => {
     }
 });
 
-function animate() {
-    ctx.clearRect(0, 0, 400, 600);
 
-    drawBackground();
-    drawTargets();
-    drawNotes();
-    drawScore();
-    drawMisses();
-
-    updateNotes();
-    requestAnimationFrame(animate);
-}
 
 animate();
