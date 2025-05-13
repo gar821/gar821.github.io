@@ -33,6 +33,7 @@ let notes = [
 ];
 
 let score = 0;
+let misses = 0;
 
 function drawNotes() {
     notes.forEach((note) => {
@@ -44,8 +45,16 @@ function drawNotes() {
 }
 
 function updateNotes() {
-    notes.forEach((note) => {
-        note.y -= 2; // Move each note up
+    notes = notes.filter((note) => {
+        if (note.y < 0 - noteRadius) { // Check if note goes above the top,
+            // and specifically, 
+            // its when the note is completely above (including radius),
+            // so that the notes dont disappear on screen
+            misses++;
+            return false; // remove missed note
+        }
+        note.y -= 2; // Move the note up
+        return true; // keep the note if its not missed
     });
 }
 
@@ -53,6 +62,12 @@ function drawScore() {
     ctx.font = "20px Arial";
     ctx.fillStyle = "#FFF";
     ctx.fillText("Score: " + score, 10, 30);
+}
+
+function drawMisses(){
+    ctx.font = "20px Arial";
+    ctx.fillStyle = "FFF";
+    ctx.fillText("Misses: " + misses, 300, 30); // Display misses at the top right
 }
 
 let keyToX = {
@@ -93,6 +108,7 @@ function animate() {
     drawTargets();
     drawNotes();
     drawScore();
+    drawMisses();
 
     updateNotes();
     requestAnimationFrame(animate);
