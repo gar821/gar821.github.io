@@ -9,10 +9,10 @@ function drawBackground() {
 const targetRadius = 30;
 const targetY = 50;
 const targets = [
-    { x: 50, color: "rgba(255, 99, 71, 1)", key: "a" },
-    { x: 150, color: "rgba(30, 144, 255, 1)", key: "s" },
-    { x: 250, color: "rgba(50, 205, 50, 1)", key: "d" },
-    { x: 350, color: "rgba(255, 215, 0, 1)", key: "f" },
+    { x: 50, color: "rgba(255, 99, 71, 1)", key: "d" },
+    { x: 150, color: "rgba(30, 144, 255, 1)", key: "f" },
+    { x: 250, color: "rgba(50, 205, 50, 1)", key: "j" },
+    { x: 350, color: "rgba(255, 215, 0, 1)", key: "k" },
 ];
 //drawtarget
 function drawTargets() {
@@ -26,10 +26,10 @@ function drawTargets() {
 
 const noteRadius = targetRadius;
 let notes = [
-    { x: 50, y: 550, color: "rgba(255, 99, 71, 1)", key: "a" },
-    { x: 150, y: 500, color: "rgba(30, 144, 255, 1)", key: "s" },
-    { x: 250, y: 450, color: "rgba(50, 205, 50, 1)", key: "d" },
-    { x: 350, y: 400, color: "rgba(255, 215, 0, 1)", key: "f" },
+    { x: 50, y: 550, color: "rgba(255, 99, 71, 1)", key: "d" },
+    { x: 150, y: 500, color: "rgba(30, 144, 255, 1)", key: "f" },
+    { x: 250, y: 450, color: "rgba(50, 205, 50, 1)", key: "j" },
+    { x: 350, y: 400, color: "rgba(255, 215, 0, 1)", key: "k" },
 ];
 
 let score = 0;
@@ -56,10 +56,10 @@ function drawScore() {
 }
 
 let keyToX = {
-    a: 50,
-    s: 150,
-    d: 250,
-    f: 350,
+    d: 50,
+    f: 150,
+    j: 250,
+    k: 350,
 };
 
 document.addEventListener("keydown", (event) => {
