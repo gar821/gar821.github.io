@@ -44,6 +44,7 @@ function drawBackground() {
     ctx.fillStyle = "#222";
     ctx.fillRect(0, 0, 400, 600);
 }
+
 //target
 const targetRadius = 30;
 const targetY = 50;
@@ -53,12 +54,19 @@ const targets = [
     { x: 250, color: "rgba(50, 205, 50, 1)", key: "j" },
     { x: 350, color: "rgba(255, 215, 0, 1)", key: "k" },
 ];
+
+// Track currently pressed keys
+let keyDownState = {};
+
 //drawtarget
 function drawTargets() {
     targets.forEach((target) => {
         ctx.beginPath();
         ctx.arc(target.x, targetY, targetRadius, 0, Math.PI * 2);
-        ctx.fillStyle = target.color;
+
+        // Change color dynamically based on key press
+        let color = keyDownState[target.key] ? target.color : "gray"; // Default to gray if not pressed
+        ctx.fillStyle = color;
         ctx.fill();
     });
 }
@@ -86,14 +94,11 @@ function drawNotes() {
 function updateNotes() {
     notes = notes.filter((note) => {
         if (note.y < 0 - noteRadius) { // Check if note goes above the top,
-            // and specifically, 
-            // its when the note is completely above (including radius),
-            // so that the notes dont disappear on screen
             misses++;
             return false; // remove missed note
         }
         note.y -= 2; // Move the note up
-        return true; // keep the note if its not missed
+        return true; // keep the note if it's not missed
     });
 }
 
@@ -105,7 +110,7 @@ function drawScore() {
 
 function drawMisses(){
     ctx.font = "20px Arial";
-    ctx.fillStyle = "FFF";
+    ctx.fillStyle = "#FFF";
     ctx.fillText("Misses: " + misses, 350, 30); // Display misses at the top right
 }
 
@@ -118,9 +123,10 @@ let keyToX = {
 
 document.addEventListener("keydown", (event) => {
     const keyPressed = event.key.toLowerCase();
+    keyDownState[keyPressed] = true; // Mark key as pressed
 
     let xPosition = keyToX[keyPressed]; // Get x pos for the pressed key
-    if (xPosition !== undefined) { //make sure its valid
+    if (xPosition !== undefined) { // Make sure it's valid
         for (let i = 0; i < notes.length; i++) {
             let note = notes[i];
 
@@ -140,6 +146,9 @@ document.addEventListener("keydown", (event) => {
     }
 });
 
-
+document.addEventListener("keyup", (event) => {
+    const keyReleased = event.key.toLowerCase();
+    keyDownState[keyReleased] = false; // Mark key as released
+});
 
 animate();
