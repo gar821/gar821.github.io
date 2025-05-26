@@ -1,19 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rhythm Game</title>
     <style>
-        canvas{
-            border: 1px solid;
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            background-color: #1e1e1e;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        canvas {
+            border: 2px solid white;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .instructions {
+            max-width: 600px;
+            font-size: 18px;
+            line-height: 1.5;
         }
     </style>
 </head>
 <body>
-    <canvas id="myCanvas"
-        width="400"
-        height="600">
-        </canvas>
-    <script src="game.js">       
-    </script>
+    <h1>Rhythm Game</h1>
+    <canvas id="myCanvas" width="400" height="600"></canvas>
+    <div class="instructions">
+        <p>
+            Welcome to the best rhythm Game! 
+            Hit the keys <strong>D</strong>, <strong>F</strong>, <strong>J</strong>, and <strong>K</strong> 
+            as the notes reach the targets at the top. Try to score as high as possible with fewest misses!
+        </p>
+        <p>
+            this game isnt very beginner friendly but if you are up for the challenge, try it..
+        </p>
+    </div>
+    <script src="game.js"></script>
 </body>
 </html>

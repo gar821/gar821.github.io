@@ -2,8 +2,15 @@ const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
 
 let currentState = "startScreen"; // tracks the current state of the game
+let songStartTime = null; // Track when the song starts
+const audio = new Audio('beethovenVirus.mp3'); // Load the music
 
-function drawStartScreen(){ //start screen with
+// Event listener for when the song ends
+audio.addEventListener("ended", () => {
+    currentState = "youWin"; // Transition to u win state when the song ends
+});
+
+function drawStartScreen() { // Start screen with:
     drawBackground();
     ctx.font = "40px Arial";
     ctx.fillStyle = "#FFF";
@@ -11,30 +18,40 @@ function drawStartScreen(){ //start screen with
     ctx.fillText("Rhythm Game", 400 / 2, 200); // title,
 
     ctx.font = "20px Arial";
-    ctx.fillText("Click to Start", 400 / 2, 300); //and instructions
+    ctx.fillText("Click to Start", 400 / 2, 300); // and instructions
+
+    ctx.font = "20px Arial";
+    ctx.fillText("Press Keys D, F, J, K", 400 / 2, 500); // instructions
 }
 
-canvas.addEventListener("mousedown", () =>{
+canvas.addEventListener("mousedown", () => {
     if (currentState === "startScreen") {
-        currentState = "gameplay"; // transition to gameplay
+        currentState = "gameplay"; // Transition to gameplay
+        startSong(); // Start the song
     }
 });
 
-//draw game based on the current state
+// Function to start the song
+function startSong() {
+    songStartTime = Date.now(); // Record the start time of the song
+    audio.play(); // Play the music
+}
+
+// Draw game based on the current state
 function animate() {
     ctx.clearRect(0, 0, 400, 600);
 
-    if (currentState === "startScreen"){ //if start screen,
-        //draw start screen
+    if (currentState === "startScreen") {
         drawStartScreen();
-    } else if (currentState === "gameplay") {//otherwise, if state is
-        //gameplay, do gameplay stuff
+    } else if (currentState === "gameplay") {
         drawBackground();
         drawTargets();
         drawNotes();
         drawScore();
         drawMisses();
         updateNotes();
+    } else if (currentState === "youWin") {
+        drawYouWinScreen(); // Draw You Win screen
     }
 
     requestAnimationFrame(animate);
@@ -45,7 +62,7 @@ function drawBackground() {
     ctx.fillRect(0, 0, 400, 600);
 }
 
-//target
+// Target
 const targetRadius = 30;
 const targetY = 50;
 const targets = [
@@ -58,7 +75,7 @@ const targets = [
 // Track currently pressed keys
 let keyDownState = {};
 
-//drawtarget
+// Draw targets
 function drawTargets() {
     targets.forEach((target) => {
         ctx.beginPath();
@@ -95,10 +112,10 @@ function updateNotes() {
     notes = notes.filter((note) => {
         if (note.y < 0 - noteRadius) { // Check if note goes above the top,
             misses++;
-            return false; // remove missed note
+            return false; // Remove missed note
         }
-        note.y -= 2; // Move the note up
-        return true; // keep the note if it's not missed
+        note.y -= 6; // Move the note up
+        return true; // Keep the note if it's not missed
     });
 }
 
@@ -108,10 +125,23 @@ function drawScore() {
     ctx.fillText("Score: " + score, 50, 30);
 }
 
-function drawMisses(){
+function drawMisses() {
     ctx.font = "20px Arial";
     ctx.fillStyle = "#FFF";
     ctx.fillText("Misses: " + misses, 350, 30); // Display misses at the top right
+}
+
+function drawYouWinScreen() { // You Win screen
+    drawBackground();
+    ctx.font = "40px Arial";
+    ctx.fillStyle = "#FFF";
+    ctx.textAlign = "center";
+    ctx.fillText("You Win!", 400 / 2, 200); // Display "You Win" message
+
+    ctx.font = "20px Arial";
+    ctx.fillText("Score: " + score, 400 / 2, 280); // Display score
+    ctx.fillText("Misses: " + misses, 400 / 2, 320); // Display misses
+    ctx.fillText("Thank you for playing!", 400 / 2, 400); // End message
 }
 
 let keyToX = {
