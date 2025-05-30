@@ -1,28 +1,9 @@
- HEAD
-# This is markdown
+# gar821.github.io
 
-markdown is a powerful formatting language, that is optimizied for reading
+This is my personal website and project portfolio, built with HTML, CSS, and some JavaScript.  
+You’ll find my web projects, experiments here.
 
-## Markdown Formatting
 
-asdwfwsaf
+Personal website and projects
 
-### Lists
-
-Here is an example of a list
-
-- first
-- second
-- third
-
-* first
-* second
-* third
-
-1. first
-2. second
-3. third
-
-### Paragraphs
-
-a
+[My website](https://gar821.github.io/)
